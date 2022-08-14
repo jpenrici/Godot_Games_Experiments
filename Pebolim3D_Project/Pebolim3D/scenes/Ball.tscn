@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SphereShape" id=1]
+
+[node name="Ball" type="Spatial"]
+
+[node name="RigidBody" type="RigidBody" parent="."]
+mass = 0.5
+gravity_scale = 0.5
+
+[node name="CSGSphere" type="CSGSphere" parent="RigidBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+shape = SubResource( 1 )
