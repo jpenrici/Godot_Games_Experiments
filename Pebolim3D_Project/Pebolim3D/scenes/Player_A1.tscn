@@ -16,8 +16,8 @@ tracks/0/keys = PoolRealArray( 0, 1, 0, -1.6, -20, 0, 0, 0, 1, 0.5, 0.7, 0.7, 0.
 
 [node name="Player_A1" instance=ExtResource( 1 )]
 
-[node name="Foot" parent="Player_A1" index="0" instance=ExtResource( 2 )]
-transform = Transform( 2, 0, 0, 0, 1.42857, 0, 0, 0, 1.42857, 0, -5.01713, -1.30324 )
+[node name="Foot1" parent="Player_A1" index="0" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 5, 0, 0, 0, 1, 0, -0.8, -1.348 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Action = SubResource( 2 )

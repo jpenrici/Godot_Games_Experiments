@@ -1,14 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PhysicsMaterial" id=2]
 
 [sub_resource type="SphereShape" id=1]
 
 [node name="Ball" type="Spatial"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RigidBody" type="RigidBody" parent="."]
-mass = 0.5
-gravity_scale = 0.5
+collision_mask = 0
+physics_material_override = SubResource( 2 )
 
 [node name="CSGSphere" type="CSGSphere" parent="RigidBody"]
+radial_segments = 25
+rings = 25
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 shape = SubResource( 1 )

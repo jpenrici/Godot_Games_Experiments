@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Foot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/glb/Player_B1.glb" type="PackedScene" id=2]
+
+[node name="Player_B1" instance=ExtResource( 2 )]
+
+[node name="Foot1" parent="Player_B1" index="0" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 2.72821e-08, 0, 5, 0, -2.72821e-08, 0, 1, 0.0173798, -0.736398, -1.20806 )
