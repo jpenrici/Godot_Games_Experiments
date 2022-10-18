@@ -1,21 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[ext_resource path="res://scripts/Ball.cs" type="Script" id=1]
+
+[sub_resource type="PhysicsMaterial" id=3]
 
 [sub_resource type="SphereShape" id=1]
 
-[node name="Ball" type="Spatial"]
-__meta__ = {
-"_edit_group_": true
-}
+[sub_resource type="SphereShape" id=2]
 
-[node name="RigidBody" type="RigidBody" parent="."]
+[node name="Ball" type="RigidBody"]
 collision_mask = 0
-physics_material_override = SubResource( 2 )
+physics_material_override = SubResource( 3 )
+script = ExtResource( 1 )
+speed = 20.0
 
-[node name="CSGSphere" type="CSGSphere" parent="RigidBody"]
-radial_segments = 25
-rings = 25
+[node name="CSGSphere" type="CSGSphere" parent="."]
+rings = 12
 
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+[node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 2 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_Ball_mouse_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

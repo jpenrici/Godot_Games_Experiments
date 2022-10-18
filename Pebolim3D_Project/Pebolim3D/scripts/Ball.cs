@@ -1,30 +1,55 @@
 using Godot;
 using System;
 
-public class Ball : Spatial
+public class Ball : RigidBody
 {
-    float posX;
-    float posY;
-    RigidBody rb;
+    private float speed;
+
+    private Vector3 position;
+    private Vector3 linearVelocity;
 
     public override void _Ready()
     {
-        posX = Translation.x;
-        posY = Translation.y;
+        speed = 15f;
+        position = Translation;
 
-        rb = this.GetNode<RigidBody>("RigidBody");
-        rb.Mass = 0.01f;
-        rb.Weight = 0.1f;
-        rb.CanSleep = false;
-        rb.PhysicsMaterialOverride.Rough = true;
-        rb.PhysicsMaterialOverride.Friction = 0.1f;
-        rb.PhysicsMaterialOverride.Bounce = 0.5f;
-        rb.LinearVelocity = new Vector3(2.0f, 0.0f, 0.0f);
-        rb.AngularVelocity = new Vector3(10.0f, 0.0f, 10.0f);
+        Mass = 1f;
+        Weight = 9.8f;
+        CanSleep = false;
+        PhysicsMaterialOverride.Rough = true;
+        PhysicsMaterialOverride.Friction = 0.5f;
+        PhysicsMaterialOverride.Bounce = 0.5f;
+        LinearVelocity = new Vector3(0.0f, 0.0f, 0.0f);
+        AngularVelocity = new Vector3(0.5f, 0.0f, 0.5f);
+
+        linearVelocity = LinearVelocity;
     }
 
     public override void _Process(float delta)
     {
+        if (Translation.y < -20)
+        {
+            Reposition();
+        }
     }
 
+    public void _on_Area_body_entered(Node body)
+    {
+        GD.Print(body.Name);
+        if (body.Name.StartsWith("Foot", StringComparison.Ordinal))
+        {
+            LinearVelocity += new Vector3(speed * (LinearVelocity.x > 0 ? 1f : -1f), 0.0f, 0.0f);
+        }
+    }
+
+    public void _on_Ball_mouse_entered()
+    {
+        Reposition();
+    }
+
+    private void Reposition()
+    {
+        Translation = position;
+        LinearVelocity = linearVelocity;
+    }
 }

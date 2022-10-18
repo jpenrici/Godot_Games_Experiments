@@ -1,21 +1,16 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Table.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/glb/Axis.glb" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Player_A1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/Player_A2.cs" type="Script" id=5]
-[ext_resource path="res://assets/glb/Player_A4.glb" type="PackedScene" id=6]
-[ext_resource path="res://assets/glb/Player_A3.glb" type="PackedScene" id=7]
-[ext_resource path="res://assets/glb/Player_A2.glb" type="PackedScene" id=8]
-[ext_resource path="res://assets/glb/Player_B2.glb" type="PackedScene" id=9]
-[ext_resource path="res://assets/glb/Player_B3.glb" type="PackedScene" id=10]
-[ext_resource path="res://assets/glb/Player_B1.glb" type="PackedScene" id=11]
-[ext_resource path="res://assets/glb/Player_B4.glb" type="PackedScene" id=12]
-[ext_resource path="res://scripts/Player_A1.cs" type="Script" id=13]
-[ext_resource path="res://scripts/Player_A3.cs" type="Script" id=14]
-[ext_resource path="res://scripts/Player_A4.cs" type="Script" id=15]
-[ext_resource path="res://scripts/Ball.cs" type="Script" id=16]
+[ext_resource path="res://scenes/Player_B4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Player_B1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Player_A2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Player_B2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Player_A3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Player_A4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Player_B3.tscn" type="PackedScene" id=11]
 
 [node name="Main" type="Spatial"]
 
@@ -28,29 +23,7 @@ __meta__ = {
 [node name="Table" parent="." instance=ExtResource( 1 )]
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200603, 28.6427, -21.3685 )
-script = ExtResource( 16 )
-
-[node name="Player_A1" parent="." instance=ExtResource( 4 )]
-script = ExtResource( 13 )
-
-[node name="Player_A2" parent="." instance=ExtResource( 8 )]
-script = ExtResource( 5 )
-
-[node name="Player_A3" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123009, -1.90735e-06, -0.0183849 )
-script = ExtResource( 14 )
-
-[node name="Player_A4" parent="." instance=ExtResource( 6 )]
-script = ExtResource( 15 )
-
-[node name="Player_B1" parent="." instance=ExtResource( 11 )]
-
-[node name="Player_B2" parent="." instance=ExtResource( 9 )]
-
-[node name="Player_B3" parent="." instance=ExtResource( 10 )]
-
-[node name="Player_B4" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2781, 7.71131, -19.3608 )
 
 [node name="Axis" type="Spatial" parent="."]
 __meta__ = {
@@ -79,3 +52,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0 )
 
 [node name="Axis_B4" parent="Axis" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0 )
+
+[node name="Team_A" type="Spatial" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player_A1" parent="Team_A" instance=ExtResource( 4 )]
+
+[node name="Player_A2" parent="Team_A" instance=ExtResource( 7 )]
+
+[node name="Player_A3" parent="Team_A" instance=ExtResource( 9 )]
+
+[node name="Player_A4" parent="Team_A" instance=ExtResource( 10 )]
+
+[node name="Team_B" type="Spatial" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player_B1" parent="Team_B" instance=ExtResource( 6 )]
+
+[node name="Player_B2" parent="Team_B" instance=ExtResource( 8 )]
+
+[node name="Player_B3" parent="Team_B" instance=ExtResource( 11 )]
+
+[node name="Player_B4" parent="Team_B" instance=ExtResource( 5 )]

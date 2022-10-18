@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/Foot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player_collider.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/glb/Player_A2.glb" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Player.cs" type="Script" id=3]
+
+[sub_resource type="CylinderShape" id=1]
+height = 112.044
 
 [node name="Player_A2" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
 
 [node name="Foot1" parent="Player_A2" index="0" instance=ExtResource( 1 )]
 transform = Transform( 2, 0, 0, 0, 9, 0, 0, 0, 2, 0, -0.856646, 16.0859 )
 
 [node name="Foot2" parent="Player_A2" index="1" instance=ExtResource( 1 )]
 transform = Transform( 2, 0, 0, 0, 9, 0, 0, 0, 1, 0, -0.8, -18.4439 )
+
+[node name="RigidBody" type="RigidBody" parent="Player_A2" index="2"]
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="Player_A2/RigidBody" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -4.76837e-07, 0 )
+shape = SubResource( 1 )
