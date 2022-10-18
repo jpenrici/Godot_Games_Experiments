@@ -2,6 +2,15 @@ using Godot;
 
 public class Player : Spatial
 {
+    [Export]
+    public readonly bool useArrow;
+
+    [Export]
+    public readonly float Z_Top;
+
+    [Export]
+    public readonly float Z_Bottom;
+
     private Vector3 position;
     private AnimationPlayer animationPlayer;
     private string action;
@@ -16,17 +25,21 @@ public class Player : Spatial
 
     public override void _Process(float delta)
     {
-        if (Input.IsActionPressed("up"))
+        if ((Input.IsActionPressed("up1") && !useArrow) || (Input.IsActionPressed("up2") && useArrow))
         {
-            //GD.Print(Name, ": Up");
-            Translation = new Vector3(position.x, position.y, Translation.z - step);
+            if (Translation.z > Z_Top)
+            {
+                Translation = new Vector3(position.x, position.y, Translation.z - step);
+            }
         }
-        if (Input.IsActionPressed("down"))
+        if ((Input.IsActionPressed("down1") && !useArrow) || (Input.IsActionPressed("down2") && useArrow))
         {
-            //GD.Print(Name, ": Down");
-            Translation = new Vector3(position.x, position.y, Translation.z + step);
+            if (Translation.z < Z_Bottom)
+            {
+                Translation = new Vector3(position.x, position.y, Translation.z + step);
+            }
         }
-        if (action != null && Input.IsActionJustPressed("kick"))
+        if (action != null && ((Input.IsActionJustPressed("kick1") && !useArrow) || (Input.IsActionJustPressed("kick2") && useArrow)))
         {
             animationPlayer.Play(action);
         }

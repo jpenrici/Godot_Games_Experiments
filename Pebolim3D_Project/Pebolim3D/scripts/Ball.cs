@@ -20,7 +20,7 @@ public class Ball : RigidBody
         PhysicsMaterialOverride.Friction = 0.5f;
         PhysicsMaterialOverride.Bounce = 0.5f;
         LinearVelocity = new Vector3(0.0f, 0.0f, 0.0f);
-        AngularVelocity = new Vector3(0.5f, 0.0f, 0.5f);
+        AngularVelocity = new Vector3(1f, 0.0f, 1f);
 
         linearVelocity = LinearVelocity;
     }
@@ -35,7 +35,7 @@ public class Ball : RigidBody
 
     public void _on_Area_body_entered(Node body)
     {
-        GD.Print(body.Name);
+        //GD.Print(body.Name);
         if (body.Name.StartsWith("Foot", StringComparison.Ordinal))
         {
             LinearVelocity += new Vector3(speed * (LinearVelocity.x > 0 ? 1f : -1f), 0.0f, 0.0f);

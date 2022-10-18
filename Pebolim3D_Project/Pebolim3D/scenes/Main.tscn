@@ -59,12 +59,20 @@ __meta__ = {
 }
 
 [node name="Player_A1" parent="Team_A" instance=ExtResource( 4 )]
+Z_Top = -15.0
+Z_Bottom = 17.0
 
 [node name="Player_A2" parent="Team_A" instance=ExtResource( 7 )]
+Z_Top = -8.0
+Z_Bottom = 10.0
 
 [node name="Player_A3" parent="Team_A" instance=ExtResource( 9 )]
+Z_Top = -0.5
+Z_Bottom = 2.0
 
 [node name="Player_A4" parent="Team_A" instance=ExtResource( 10 )]
+Z_Top = -4.0
+Z_Bottom = 5.0
 
 [node name="Team_B" type="Spatial" parent="."]
 __meta__ = {
@@ -72,9 +80,21 @@ __meta__ = {
 }
 
 [node name="Player_B1" parent="Team_B" instance=ExtResource( 6 )]
+useArrow = true
+Z_Top = -15.0
+Z_Bottom = 15.0
 
 [node name="Player_B2" parent="Team_B" instance=ExtResource( 8 )]
+useArrow = true
+Z_Top = -8.0
+Z_Bottom = 9.0
 
 [node name="Player_B3" parent="Team_B" instance=ExtResource( 11 )]
+useArrow = true
+Z_Top = -0.5
+Z_Bottom = 2.0
 
 [node name="Player_B4" parent="Team_B" instance=ExtResource( 5 )]
+useArrow = true
+Z_Top = -4.0
+Z_Bottom = 5.0
