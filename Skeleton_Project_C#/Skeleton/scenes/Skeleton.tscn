@@ -1,0 +1,419 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://images/Skeleton_Sprite_Head.png" type="Texture" id=1]
+[ext_resource path="res://images/Skeleton_Sprite_Body.png" type="Texture" id=2]
+[ext_resource path="res://images/Skeleton_Sprite_Hand.png" type="Texture" id=3]
+[ext_resource path="res://images/Skeleton_Sprite_Arm1.png" type="Texture" id=4]
+[ext_resource path="res://images/Skeleton_Sprite_Arm2.png" type="Texture" id=5]
+[ext_resource path="res://images/Skeleton_Sprite_Leg1.png" type="Texture" id=6]
+[ext_resource path="res://images/Skeleton_Sprite_Leg2.png" type="Texture" id=7]
+[ext_resource path="res://images/Skeleton_Sprite_Foot.png" type="Texture" id=8]
+[ext_resource path="res://scripts/SkelectonControl.cs" type="Script" id=9]
+[ext_resource path="res://scripts/SpriteAction.cs" type="Script" id=10]
+
+[sub_resource type="AnimatedTexture" id=6]
+flags = 4
+frame_0/texture = ExtResource( 6 )
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 15.0
+height = 68.0
+
+[sub_resource type="AnimatedTexture" id=7]
+flags = 4
+frame_0/texture = ExtResource( 7 )
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 16.0
+height = 118.0
+
+[sub_resource type="AnimatedTexture" id=8]
+flags = 4
+frame_0/texture = ExtResource( 8 )
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 26.0
+height = 2.0
+
+[sub_resource type="CapsuleShape2D" id=12]
+height = 76.0
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 16.0
+height = 92.0
+
+[sub_resource type="CapsuleShape2D" id=14]
+radius = 24.0
+height = 12.0
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frame_0/texture = ExtResource( 1 )
+
+[sub_resource type="CircleShape2D" id=23]
+radius = 70.0
+
+[sub_resource type="AnimatedTexture" id=2]
+flags = 4
+frame_0/texture = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 65, 88.5 )
+
+[sub_resource type="AnimatedTexture" id=4]
+flags = 4
+frame_0/texture = ExtResource( 4 )
+
+[sub_resource type="CapsuleShape2D" id=17]
+height = 96.0
+
+[sub_resource type="AnimatedTexture" id=5]
+flags = 4
+frame_0/texture = ExtResource( 5 )
+
+[sub_resource type="CapsuleShape2D" id=18]
+height = 100.0
+
+[sub_resource type="AnimatedTexture" id=3]
+flags = 4
+frame_0/texture = ExtResource( 3 )
+
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 19.0
+height = 8.0
+
+[sub_resource type="CapsuleShape2D" id=20]
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id=21]
+height = 84.0
+
+[sub_resource type="CapsuleShape2D" id=22]
+radius = 21.0
+height = 0.0
+
+[node name="Skeleton" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="LeftLeg1" type="Sprite" parent="."]
+texture = SubResource( 6 )
+offset = Vector2( 3, 53 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="LeftLeg1"]
+position = Vector2( 0, 109 )
+
+[node name="Pos2D1" type="Position2D" parent="LeftLeg1"]
+
+[node name="Pos2D2" type="Position2D" parent="LeftLeg1"]
+
+[node name="Pos2D3" type="Position2D" parent="LeftLeg1"]
+
+[node name="Pos2D4" type="Position2D" parent="LeftLeg1"]
+
+[node name="Area2D" type="Area2D" parent="LeftLeg1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftLeg1/Area2D"]
+position = Vector2( 2, 36 )
+shape = SubResource( 9 )
+
+[node name="LeftLeg2" type="Sprite" parent="."]
+texture = SubResource( 7 )
+offset = Vector2( 3, 70 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="LeftLeg2"]
+position = Vector2( 3, 133 )
+
+[node name="Pos2D1" type="Position2D" parent="LeftLeg2"]
+
+[node name="Pos2D2" type="Position2D" parent="LeftLeg2"]
+
+[node name="Pos2D3" type="Position2D" parent="LeftLeg2"]
+
+[node name="Pos2D4" type="Position2D" parent="LeftLeg2"]
+
+[node name="Area2D" type="Area2D" parent="LeftLeg2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftLeg2/Area2D"]
+position = Vector2( 3, 73 )
+shape = SubResource( 10 )
+
+[node name="LeftFoot" type="Sprite" parent="."]
+texture = SubResource( 8 )
+offset = Vector2( 14, 34 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="LeftFoot"]
+
+[node name="Pos2D1" type="Position2D" parent="LeftFoot"]
+
+[node name="Pos2D2" type="Position2D" parent="LeftFoot"]
+
+[node name="Pos2D3" type="Position2D" parent="LeftFoot"]
+
+[node name="Pos2D4" type="Position2D" parent="LeftFoot"]
+
+[node name="Area2D" type="Area2D" parent="LeftFoot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFoot/Area2D"]
+position = Vector2( 6, 31 )
+shape = SubResource( 11 )
+
+[node name="RightLeg1" type="Sprite" parent="."]
+texture = SubResource( 6 )
+offset = Vector2( -10, 61 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="RightLeg1"]
+position = Vector2( -13, 117 )
+
+[node name="Pos2D1" type="Position2D" parent="RightLeg1"]
+
+[node name="Pos2D2" type="Position2D" parent="RightLeg1"]
+
+[node name="Pos2D3" type="Position2D" parent="RightLeg1"]
+
+[node name="Pos2D4" type="Position2D" parent="RightLeg1"]
+
+[node name="Area2D" type="Area2D" parent="RightLeg1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightLeg1/Area2D"]
+position = Vector2( -8, 54 )
+shape = SubResource( 12 )
+
+[node name="RightLeg2" type="Sprite" parent="."]
+texture = SubResource( 7 )
+offset = Vector2( 0, 62 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="RightLeg2"]
+position = Vector2( 0, 124 )
+
+[node name="Pos2D1" type="Position2D" parent="RightLeg2"]
+
+[node name="Pos2D2" type="Position2D" parent="RightLeg2"]
+
+[node name="Pos2D3" type="Position2D" parent="RightLeg2"]
+
+[node name="Pos2D4" type="Position2D" parent="RightLeg2"]
+
+[node name="Area2D" type="Area2D" parent="RightLeg2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightLeg2/Area2D"]
+position = Vector2( -3, 60 )
+shape = SubResource( 13 )
+
+[node name="RightFoot" type="Sprite" parent="."]
+texture = SubResource( 8 )
+offset = Vector2( 12, 27 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="RightFoot"]
+
+[node name="Pos2D1" type="Position2D" parent="RightFoot"]
+
+[node name="Pos2D2" type="Position2D" parent="RightFoot"]
+
+[node name="Pos2D3" type="Position2D" parent="RightFoot"]
+
+[node name="Pos2D4" type="Position2D" parent="RightFoot"]
+
+[node name="Area2D" type="Area2D" parent="RightFoot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightFoot/Area2D"]
+position = Vector2( 4, 25 )
+shape = SubResource( 14 )
+
+[node name="Head" type="Sprite" parent="."]
+texture = SubResource( 1 )
+offset = Vector2( -3, -66 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="Head"]
+
+[node name="Pos2D1" type="Position2D" parent="Head"]
+
+[node name="Pos2D2" type="Position2D" parent="Head"]
+
+[node name="Pos2D3" type="Position2D" parent="Head"]
+
+[node name="Pos2D4" type="Position2D" parent="Head"]
+
+[node name="Area2D" type="Area2D" parent="Head"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Area2D"]
+position = Vector2( -1, -69 )
+shape = SubResource( 23 )
+
+[node name="Body" type="Sprite" parent="."]
+texture = SubResource( 2 )
+offset = Vector2( -5, -96 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="Body"]
+position = Vector2( -7, -211 )
+
+[node name="Pos2D1" type="Position2D" parent="Body"]
+position = Vector2( -85, -152 )
+
+[node name="Pos2D2" type="Position2D" parent="Body"]
+position = Vector2( 78, -155 )
+
+[node name="Pos2D3" type="Position2D" parent="Body"]
+position = Vector2( -46, -15 )
+
+[node name="Pos2D4" type="Position2D" parent="Body"]
+position = Vector2( 41, -15 )
+
+[node name="Area2D" type="Area2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D"]
+position = Vector2( -3, -120.5 )
+shape = SubResource( 24 )
+
+[node name="RightArm1" type="Sprite" parent="."]
+texture = SubResource( 4 )
+offset = Vector2( 4, 57 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="RightArm1"]
+position = Vector2( 4, 109 )
+
+[node name="Pos2D1" type="Position2D" parent="RightArm1"]
+
+[node name="Pos2D2" type="Position2D" parent="RightArm1"]
+
+[node name="Pos2D3" type="Position2D" parent="RightArm1"]
+
+[node name="Pos2D4" type="Position2D" parent="RightArm1"]
+
+[node name="Area2D" type="Area2D" parent="RightArm1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArm1/Area2D"]
+position = Vector2( 5, 60 )
+shape = SubResource( 17 )
+
+[node name="RightArm2" type="Sprite" parent="."]
+texture = SubResource( 5 )
+offset = Vector2( 5, 51 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="RightArm2"]
+position = Vector2( 7, 99 )
+
+[node name="Pos2D1" type="Position2D" parent="RightArm2"]
+
+[node name="Pos2D2" type="Position2D" parent="RightArm2"]
+
+[node name="Pos2D3" type="Position2D" parent="RightArm2"]
+
+[node name="Pos2D4" type="Position2D" parent="RightArm2"]
+
+[node name="Area2D" type="Area2D" parent="RightArm2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArm2/Area2D"]
+position = Vector2( 8, 53 )
+shape = SubResource( 18 )
+
+[node name="RightHand" type="Sprite" parent="."]
+texture = SubResource( 3 )
+offset = Vector2( 12, 22 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="RightHand"]
+
+[node name="Pos2D1" type="Position2D" parent="RightHand"]
+
+[node name="Pos2D2" type="Position2D" parent="RightHand"]
+
+[node name="Pos2D3" type="Position2D" parent="RightHand"]
+
+[node name="Pos2D4" type="Position2D" parent="RightHand"]
+
+[node name="Area2D" type="Area2D" parent="RightHand"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightHand/Area2D"]
+position = Vector2( 5, 25 )
+shape = SubResource( 19 )
+
+[node name="LeftArm1" type="Sprite" parent="."]
+texture = SubResource( 4 )
+offset = Vector2( 8, 53 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="LeftArm1"]
+position = Vector2( 9, 103 )
+
+[node name="Pos2D1" type="Position2D" parent="LeftArm1"]
+
+[node name="Pos2D2" type="Position2D" parent="LeftArm1"]
+
+[node name="Pos2D3" type="Position2D" parent="LeftArm1"]
+
+[node name="Pos2D4" type="Position2D" parent="LeftArm1"]
+
+[node name="Area2D" type="Area2D" parent="LeftArm1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArm1/Area2D"]
+position = Vector2( 11, 52 )
+shape = SubResource( 20 )
+
+[node name="LeftArm2" type="Sprite" parent="."]
+texture = SubResource( 5 )
+offset = Vector2( 3, 44 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="LeftArm2"]
+position = Vector2( -1, 88 )
+
+[node name="Pos2D1" type="Position2D" parent="LeftArm2"]
+
+[node name="Pos2D2" type="Position2D" parent="LeftArm2"]
+
+[node name="Pos2D3" type="Position2D" parent="LeftArm2"]
+
+[node name="Pos2D4" type="Position2D" parent="LeftArm2"]
+
+[node name="Area2D" type="Area2D" parent="LeftArm2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArm2/Area2D"]
+position = Vector2( 5, 43 )
+shape = SubResource( 21 )
+
+[node name="LeftHand" type="Sprite" parent="."]
+texture = SubResource( 3 )
+offset = Vector2( 14, 20 )
+script = ExtResource( 10 )
+
+[node name="Pos2D" type="Position2D" parent="LeftHand"]
+
+[node name="Pos2D1" type="Position2D" parent="LeftHand"]
+
+[node name="Pos2D2" type="Position2D" parent="LeftHand"]
+
+[node name="Pos2D3" type="Position2D" parent="LeftHand"]
+
+[node name="Pos2D4" type="Position2D" parent="LeftHand"]
+
+[node name="Area2D" type="Area2D" parent="LeftHand"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHand/Area2D"]
+position = Vector2( 10, 22 )
+shape = SubResource( 22 )
+
+[connection signal="Reset" from="." to="." method="_on_Skeleton_Reset"]
+[connection signal="mouse_entered" from="LeftLeg1/Area2D" to="LeftLeg1" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="LeftLeg2/Area2D" to="LeftLeg2" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="LeftFoot/Area2D" to="LeftFoot" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="RightLeg1/Area2D" to="RightLeg1" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="RightLeg2/Area2D" to="RightLeg2" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="RightFoot/Area2D" to="RightFoot" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="Head/Area2D" to="Head" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="Body/Area2D" to="Body" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="RightArm1/Area2D" to="RightArm1" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="RightArm2/Area2D" to="RightArm2" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="RightHand/Area2D" to="RightHand" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="LeftArm1/Area2D" to="LeftArm1" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="LeftArm2/Area2D" to="LeftArm2" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="LeftHand/Area2D" to="LeftHand" method="_on_Area2D_mouse_entered"]
