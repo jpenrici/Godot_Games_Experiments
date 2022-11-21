@@ -1,8 +1,0 @@
-/media/jpenrici/HD1/SDK/GAME_IDE/Godot_IDE/Projects/Skeleton/.mono/temp/bin/Debug/Skeleton.dll
-/media/jpenrici/HD1/SDK/GAME_IDE/Godot_IDE/Projects/Skeleton/.mono/temp/bin/Debug/Skeleton.pdb
-/media/jpenrici/HD1/SDK/GAME_IDE/Godot_IDE/Projects/Skeleton/.mono/temp/obj/Debug/Skeleton.csproj.AssemblyReference.cache
-/media/jpenrici/HD1/SDK/GAME_IDE/Godot_IDE/Projects/Skeleton/.mono/temp/obj/Debug/Skeleton.AssemblyInfoInputs.cache
-/media/jpenrici/HD1/SDK/GAME_IDE/Godot_IDE/Projects/Skeleton/.mono/temp/obj/Debug/Skeleton.AssemblyInfo.cs
-/media/jpenrici/HD1/SDK/GAME_IDE/Godot_IDE/Projects/Skeleton/.mono/temp/obj/Debug/Skeleton.csproj.CoreCompileInputs.cache
-/media/jpenrici/HD1/SDK/GAME_IDE/Godot_IDE/Projects/Skeleton/.mono/temp/obj/Debug/Skeleton.dll
-/media/jpenrici/HD1/SDK/GAME_IDE/Godot_IDE/Projects/Skeleton/.mono/temp/obj/Debug/Skeleton.pdb
