@@ -21,7 +21,7 @@ public class SkelectonControl : Node2D
     public static string ObjMouse { get; set; } = "";
 
     [Signal]
-    delegate void Reset();
+    private delegate void Reset();
 
     public override void _Ready()
     {
@@ -40,6 +40,9 @@ public class SkelectonControl : Node2D
         RightLeg2 = GetNode<Sprite>("RightLeg2");
         RightFoot = GetNode<Sprite>("RightFoot");
 
+        Body.Set("adjust_rotation", true);
+        Head.Set("adjust_rotation", true);
+
         Body.Scale = new Vector2(0.45f, 0.45f);
         Head.Scale = Body.Scale;
         LeftArm1.Scale = Body.Scale;
@@ -54,6 +57,8 @@ public class SkelectonControl : Node2D
         RightLeg1.Scale = Body.Scale;
         RightLeg2.Scale = Body.Scale;
         RightFoot.Scale = Body.Scale;
+
+        _on_Skeleton_Reset();
 
         GD.Print(string.Format("{0} : skeleton control ...", Name));
     }
@@ -70,9 +75,9 @@ public class SkelectonControl : Node2D
         }
         if (Input.IsActionJustPressed("deselect"))
         {
-            GD.Print("Released objects ...");
-            ObjSelected = "";
             ObjMouse = "";
+            ObjSelected = "";
+            GD.Print("Released objects ...");
         }
     }
 
@@ -97,16 +102,16 @@ public class SkelectonControl : Node2D
     {
         Body.Rotation = 0f;
         Head.Rotation = Body.Rotation;
-        LeftArm1.Rotation = Body.Rotation;
+        LeftArm1.Rotation = Body.Rotation + Mathf.Deg2Rad(30);
         LeftArm2.Rotation = Body.Rotation;
         LeftHand.Rotation = Body.Rotation;
-        LeftLeg1.Rotation = Body.Rotation;
+        LeftLeg1.Rotation = Body.Rotation + Mathf.Deg2Rad(15);
         LeftLeg2.Rotation = Body.Rotation;
         LeftFoot.Rotation = Body.Rotation;
-        RightArm1.Rotation = Body.Rotation;
+        RightArm1.Rotation = Body.Rotation + Mathf.Deg2Rad(-30);
         RightArm2.Rotation = Body.Rotation;
         RightHand.Rotation = Body.Rotation;
-        RightLeg1.Rotation = Body.Rotation;
+        RightLeg1.Rotation = Body.Rotation + Mathf.Deg2Rad(-15);
         RightLeg2.Rotation = Body.Rotation;
         RightFoot.Rotation = Body.Rotation;
         GD.Print("Reset ...");

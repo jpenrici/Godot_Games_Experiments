@@ -1,41 +1,86 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://images/Bkg_skeleton.png" type="Texture" id=1]
 [ext_resource path="res://images/Skeleton_Cam_On.png" type="Texture" id=2]
 [ext_resource path="res://images/Skeleton_Cam_Off.png" type="Texture" id=3]
 [ext_resource path="res://images/Skeleton_Btn_Reset_On.png" type="Texture" id=4]
 [ext_resource path="res://images/Skeleton_Btn_Reset_Off.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Skeleton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/Main.cs" type="Script" id=7]
+[ext_resource path="res://images/Skeleton_Btn_Download_On.png" type="Texture" id=6]
+[ext_resource path="res://images/Skeleton_Btn_Download_Off.png" type="Texture" id=7]
+[ext_resource path="res://images/Skeleton_Movie.png" type="Texture" id=8]
+[ext_resource path="res://scenes/Skeleton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/Main.cs" type="Script" id=10]
+[ext_resource path="res://images/Godot.png" type="Texture" id=11]
 
 [node name="Main" type="Node2D"]
-script = ExtResource( 7 )
+script = ExtResource( 10 )
 
 [node name="Background" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
 scale = Vector2( 0.623897, 0.62375 )
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cam_button" type="TextureButton" parent="."]
-margin_left = 427.0
-margin_top = 395.0
-margin_right = 508.0
-margin_bottom = 460.0
-rect_scale = Vector2( 0.736991, 0.706339 )
+margin_left = 388.6
+margin_top = 182.0
+margin_right = 469.6
+margin_bottom = 247.0
+rect_scale = Vector2( 0.456991, 0.466339 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Reset_button" type="TextureButton" parent="."]
-margin_left = 426.0
-margin_top = 449.0
-margin_right = 512.0
-margin_bottom = 489.0
+margin_left = 423.0
+margin_top = 441.0
+margin_right = 509.0
+margin_bottom = 470.0
 rect_scale = Vector2( 0.752818, 0.770944 )
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Skeleton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 167, 279 )
+[node name="Download_button" type="TextureButton" parent="."]
+margin_left = 443.6
+margin_top = 181.0
+margin_right = 495.6
+margin_bottom = 238.0
+rect_scale = Vector2( 0.52, 0.559999 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ImageShot" type="Node2D" parent="."]
+
+[node name="Movie" type="Sprite" parent="ImageShot"]
+position = Vector2( 431, 111 )
+scale = Vector2( 0.4, 0.35 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Photo" type="Sprite" parent="ImageShot"]
+position = Vector2( 431, 110 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Skeleton" parent="." instance=ExtResource( 9 )]
+position = Vector2( 150, 250 )
 
 [connection signal="button_down" from="Cam_button" to="." method="_on_Cam_button_down"]
 [connection signal="button_down" from="Reset_button" to="." method="_on_Reset_button_down"]
+[connection signal="button_down" from="Download_button" to="." method="_on_Download_button_down"]
