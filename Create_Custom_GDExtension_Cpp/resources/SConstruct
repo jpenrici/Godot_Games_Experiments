@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+root = "#PROJECT#"
+filename = "libgd#GDEXTENSION#"
+gdextension = "#GDEXTENSION#"
+gdeText = """[configuration]
+
+entry_symbol = "#GDEXTENSION#_library_init"
+compatibility_minimum = 4.1
+
+[libraries]
+
+"""
+
+# Compile
+env = SConscript("godot-cpp/SConstruct")
+env.Append(CPPPATH=["src/"])
+sources = Glob("src/*.cpp")
+
+if env["platform"] == "macos":
+    filename = "{}.{}.{}.framework/{}.{}.{}".format(filename, env["platform"], env["target"],
+                filename, env["platform"], env["target"])
+else:
+    filename = "{}{}{}".format(filename, env["suffix"], env["SHLIBSUFFIX"])
+
+library = env.SharedLibrary("{}/bin/{}".format(root, filename), source=sources)
+Default(library)
+
+# Create .gdextension
+if "debug" in env["target"]:
+    gdeText += "{}.debug.{} = \"res://bin/{}\"".format(env["platform"], env["arch"], filename)
+else:
+    gdeText += "{}.release.{} = \"res://bin/{}\"".format(env["platform"], env["arch"], filename)
+try:
+    f = open("{}/{}.gdextension".format(root, gdextension), "w")
+    f.write(gdeText)
+    f.close()
+except Exception:
+    print("Error: couldn't save gdextension file!")
