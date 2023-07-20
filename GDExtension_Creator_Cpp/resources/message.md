@@ -33,30 +33,32 @@ Learn more at https://docs.godotengine.org/en/stable/tutorials/scripting/gdexten
 ## Structure
 
 <code>
-#ROOT#/<br>
-|<br>
-|&nbsp;&nbsp;# Game project<br>
-+--#PROJECT#/<br>				
-|&nbsp;&nbsp;|<br>
-|&nbsp;&nbsp;+--project.godot<br>
-|&nbsp;&nbsp;|<br>
-|&nbsp;&nbsp;# GDExtension<br>
-|&nbsp;&nbsp;+--#GDEXTENSION#.gdextension<br>
-|&nbsp;&nbsp;|<br>
-|&nbsp;&nbsp;+--bin/<br>
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+--libraries&nbsp;# Built with Scons<br>
-|<br>
-+--godot-cpp/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# C++ bindings<br>
-|<br>
-+--src/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Extension source code<br>
-|&nbsp;&nbsp;&nbsp;|<br>
-|&nbsp;&nbsp;&nbsp;+--register_types.cpp<br>
-|&nbsp;&nbsp;&nbsp;+--register_types.h<br>
-|&nbsp;&nbsp;&nbsp;+--#GDEXTENSION#.cpp<br>
-|&nbsp;&nbsp;&nbsp;+--#GDEXTENSION#.h<br>
-|<br>
-|&nbsp;Sconstruct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# SCons script<br>
+<pre>
+#ROOT#/
+|
+|  # Game project
++--#PROJECT#/				
+|  |
+|  +--project.godot
+|  |
+|  # GDExtension
+|  +--#GDEXTENSION#.gdextension
+|  |
+|  +--bin/
+|      |
+|      +--libraries # Built with Scons
+|
++--godot-cpp/       # C++ bindings
+|
++--src/             # Extension source code
+|   |
+|   +--register_types.cpp
+|   +--register_types.h
+|   +--#GDEXTENSION#.cpp
+|   +--#GDEXTENSION#.h
+|
++--Sconstruct        # SCons script
+</pre>
 </code>
 
 ## References
