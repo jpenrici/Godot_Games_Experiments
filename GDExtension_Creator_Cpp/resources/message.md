@@ -26,8 +26,8 @@ Learn more at https://docs.godotengine.org/en/stable/tutorials/scripting/gdexten
 ## Run
 
 1. Go to the "#ROOT#" directory.
-2. Open the terminal and compile `SConstruct` by running the command `scons -Q`.
-3. Recompile whenever you modify the C++ code in the `\src` directory.
+2. Open the terminal and compile `SConstruct` by running the command `scons`.
+3. Recompile whenever you modify the C++ code in the `src` directory.
 4. Open the Godot project.
 
 ## Structure

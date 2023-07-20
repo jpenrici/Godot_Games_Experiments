@@ -117,7 +117,7 @@ def create(directoryName, projectName, gdextensionName):
     try:
         result = input("Do you want to run Scons? Process can take some time! Yes or No [Y/N]?")
         if result.upper() == 'Y':
-            os.system("scons -j4 -Q --directory={}".format(root))
+            os.system("scons -j4 --directory={}".format(root))
         else:
             print("Skip Scons ...")
     except Exception as e:
