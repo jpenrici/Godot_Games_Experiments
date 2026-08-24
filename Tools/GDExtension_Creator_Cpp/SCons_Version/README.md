@@ -2,12 +2,6 @@
 
 Experimental tool to help create a Godot project with extension.<br>
 
-## Test
-
-- Linux
-- Debian 12
-- Godot Engine 4.1
-
 ## Requeriments
 
 - python
